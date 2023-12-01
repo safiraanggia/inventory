@@ -1,4 +1,4 @@
-ini halaman pimpinan
+ini halaman pimpinan rektorat
 <a href="{{ route('logout') }}" 
     onclick="event.preventDefault();
     document.getElementById('logout-form').submit();">

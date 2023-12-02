@@ -20,7 +20,7 @@
 
   <body>
     <div class="wrapper">
-      @include('includes.sidebar-operator')
+      @include('includes.sidebar-pimpinan')
 
       <!--Navbar Atas-->
       <div class="main">

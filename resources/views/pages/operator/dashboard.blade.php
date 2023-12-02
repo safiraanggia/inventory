@@ -8,11 +8,6 @@
 
         <!--Section Card-->
         <div class="container-fluid">
-            <div class="row w-100">
-                <div class="p-2 mt-2 mb-0">
-                    <h4>Data Gudang</h4>
-                </div>
-            </div>
             <div class="row row-cols-lg-3 mt-3">
                 <!--Card BM-->
                 <a href="#">

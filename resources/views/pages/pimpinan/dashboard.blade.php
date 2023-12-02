@@ -1,10 +1,6 @@
-ini halaman pimpinan rektorat
-<a href="{{ route('logout') }}" 
-    onclick="event.preventDefault();
-    document.getElementById('logout-form').submit();">
-    {{ __('Logout') }}
-</a>
+@extends('layouts.dashboard-pimpinan')
 
-<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-    @csrf
-</form>
+@section('content')
+
+tes
+@endsection

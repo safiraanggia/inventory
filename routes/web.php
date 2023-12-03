@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Operator\DataBarangController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -26,6 +28,10 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard/operator', [HomeController::class, 'operator'])->name('dashboard-operator');
     Route::post('/dashboard/operator', [HomeController::class, 'operator'])->name('dashboard-operator');
     Route::get('/dashboard/pimpinan', [HomeController::class, 'pimpinan'])->name('dashboard-pimpinan');
+
+    //operator
+    Route::resource('/databarang', DataBarangController::class);
+
 });
 
 

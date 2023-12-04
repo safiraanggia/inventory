@@ -2,5 +2,5 @@
 
 @section('content')
 
-tessssss
+tesssss
 @endsection

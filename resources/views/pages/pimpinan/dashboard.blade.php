@@ -2,6 +2,5 @@
 
 @section('content')
 
-tewsss
 tess
 @endsection

@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Operator\DataBarangController;
+use App\Http\Controllers\Operator\DataSupplierController;
+use App\Http\Controllers\Operator\BarangMasukController;
+use App\Http\Controllers\Operator\BarangKeluarController;
+use App\Http\Controllers\Pimpinan\LaporanBarangController;
+use App\Http\Controllers\Pimpinan\LaporanSupplierController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -31,6 +36,13 @@ Route::middleware(['auth'])->group(function(){
 
     //operator
     Route::resource('/databarang', DataBarangController::class);
+    Route::resource('/datasupplier', DataSupplierController::class);
+    Route::resource('/barangmasuk', BarangMasukController::class);
+    Route::resource('/barangkeluar', BarangKeluarController::class);
+
+    //pimpinan
+    Route::resource('/laporanbarang', LaporanBarangController::class);
+    Route::resource('/laporansupplier', LaporanSupplierController::class);
 
 });
 

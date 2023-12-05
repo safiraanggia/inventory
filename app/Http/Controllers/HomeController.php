@@ -56,7 +56,19 @@ class HomeController extends Controller
     }
     public function pimpinan()
     {
-        return view('pages.pimpinan.dashboard');
+        $monthlySales = [
+            'ATK' => 300,
+            'Makanan' => 450,
+            'Minuman' => 600,
+            'Pakaian' => 600,
+            'Sepatu' => 600,
+        ];
+        
+        $productSales = [
+            'Barang Masuk' => 241,
+            'Barang Keluar' => 122,
+        ];
+        return view('pages.pimpinan.dashboard', compact('monthlySales', 'productSales'));
     }
 
     

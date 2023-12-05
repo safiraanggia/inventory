@@ -42,4 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function masuk() {
+        return $this->hasOne('App\Models\masuk');
+    }
+    public function keluar() {
+        return $this->hasOne('App\Models\keluar');
+    }
 }

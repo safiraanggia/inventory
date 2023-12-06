@@ -31,7 +31,22 @@ class DataBarangController extends Controller
      */
     public function store(Request $request)
     {
-        product::create($request->all());
+        $product = $request->all();
+
+        $product['kode_product'] = 'A'.mt_rand(00,99);
+        if ($product['kategori'] === 'Makanan') {
+            $product['kode_product'] = 'A'.mt_rand(00,99);
+        } else if ($product['kategori'] === 'Minuman') {
+            $product['kode_product'] = 'B'.mt_rand(00,99);
+        } else if ($product['kategori'] === 'ATK') {
+            $product['kode_product'] = 'C'.mt_rand(00,99);
+        } else if ($product['kategori'] === 'Pakaian') {
+            $product['kode_product'] = 'D'.mt_rand(00,99);
+        } else if ($product['kategori'] === 'Aksesoris') {
+            $product['kode_product'] = 'E'.mt_rand(00,99);
+        }
+
+        product::create($product);
  
         return redirect()->route('databarang.index')->with('Berhasil', 'Berhasil menambahkan data barang!');
     }

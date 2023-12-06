@@ -8,9 +8,6 @@
         @csrf
         <div class="row mb-3">
             <div class="col">
-                <input type="text" name="kode_product" class="form-control" placeholder="kode_product">
-            </div>
-            <div class="col">
                 <input type="text" name="nama_product" class="form-control" placeholder="nama_product">
             </div>
         </div>

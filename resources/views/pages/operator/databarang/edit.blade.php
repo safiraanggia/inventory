@@ -9,10 +9,6 @@
         @method('PUT')
         <div class="row mb-3">
             <div class="col">
-                <label class="form-label">Kode</label>
-                <input type="text" name="kode_product" class="form-control" placeholder="kode_product">
-            </div>
-            <div class="col">
                 <label class="form-label">Nama</label>
                 <input type="text" name="nama_product" class="form-control" placeholder="nama_product">
             </div>

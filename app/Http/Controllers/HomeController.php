@@ -36,7 +36,19 @@ class HomeController extends Controller
     
     public function admin()
     {
-        return view('pages.admin.dashboard');
+        $monthlySales = [
+            'ATK' => 300,
+            'Makanan' => 450,
+            'Minuman' => 600,
+            'Pakaian' => 600,
+            'Sepatu' => 600,
+        ];
+        
+        $productSales = [
+            'Barang Masuk' => 241,
+            'Barang Keluar' => 122,
+        ];
+        return view('pages.admin.dashboard', compact('monthlySales', 'productSales'));
     }
     public function operator()
     {

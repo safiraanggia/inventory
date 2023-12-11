@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1 class="mb-0">Tambah User</h1>
+<h1 class="mb-0" style="font-size: 30px; padding-left:20px; padding-top:20px;">Tambah User</h1>
     <hr />
-    <form action="{{ route('usermanagement.update', $User->id) }}" method="POST">
+    <form action="{{ route('usermanagement.update', $User->id) }}" method="POST" style="padding-left: 20px; padding-right: 20px;">
         @csrf
         @method('PUT')
         <div class="row mb-3">

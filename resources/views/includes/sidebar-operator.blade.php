@@ -23,19 +23,19 @@
         </li>
         <li class="sidebar-item">
           <a href="{{ route('datasupplier.index') }}" class="sidebar-link">
-            <img width="23" height="23" src="../images/truck.png" alt="truck" style="margin-right:2px; margin-left:1px;"/>
+            <img width="23" height="23" src="/images/truck.png" alt="truck" style="margin-right:2px; margin-left:1px;"/>
             Data Supplier
         </a>
         </li>
         <li class="sidebar-item">
           <a href="{{ route('barangmasuk.index') }}" class="sidebar-link">
-            <img width="24" height="24" src="../images/insert.png" alt="truck" style="margin-right:2px; "/>
+            <img width="24" height="24" src="/images/insert.png" alt="truck" style="margin-right:2px; "/>
             Barang Masuk
         </a>
         </li>
         <li class="sidebar-item">
           <a href="{{ route('barangkeluar.index') }}" class="sidebar-link">
-            <img width="24" height="24" src="../images/out.png" alt="truck" style="margin-right:2px; "/>
+            <img width="24" height="24" src="/images/out.png" alt="truck" style="margin-right:2px; "/>
             Barang Keluar
         </a>
         </li>

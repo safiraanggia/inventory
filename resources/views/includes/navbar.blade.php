@@ -14,7 +14,7 @@
             />
           </a>
           <div class="dropdown-menu dropdown-menu-end">
-            <a href="#" class="dropdown-item">Profile</a>
+            <a href="{{ route('profile.index') }}" class="dropdown-item">Profile</a>
             <a href="{{ route('logout') }}" class="dropdown-item" 
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">

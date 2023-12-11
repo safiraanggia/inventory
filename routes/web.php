@@ -12,6 +12,10 @@ use App\Http\Controllers\Pimpinan\LaporanSupplierController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\DataPimpinanController;
 use App\Http\Controllers\Admin\DataOperatorController;
+use App\Http\Controllers\Admin\ProfileAdminController;
+// use App\Http\Controllers\Operator\ProfileOperatorController;
+// use App\Http\Controllers\Pimpinan\ProfilePimpinanController;
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -53,6 +57,13 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/datapimpinan', DataPimpinanController::class);
     Route::resource('/dataoperator', DataOperatorController::class);
 
+    //profile
+    Route::get('/profile', [App\Http\Controllers\Admin\ProfileAdminController::class, 'index'])->name('profile.index');
+    Route::patch('/profile/{id}', [App\Http\Controllers\Admin\ProfileAdminController::class, 'update'])->name('profile.update');
+    Route::get('/profile', [App\Http\Controllers\Operator\ProfileOperatorController::class, 'index'])->name('profile.index');
+    Route::patch('/profile/{id}', [App\Http\Controllers\Operator\ProfileOperatorController::class, 'update'])->name('profile.update');
+    Route::get('/profile', [App\Http\Controllers\Pimpinan\ProfilePimpinanController::class, 'index'])->name('profile.index');
+    Route::patch('/profile/{id}', [App\Http\Controllers\Pimpinan\ProfilePimpinanController::class, 'update'])->name('profile.update');
 
 });
 

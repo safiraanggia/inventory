@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1 class="mb-0">Tambah Barang</h1>
+<h1 class="mb-0" style="font-size: 30px; padding-left:20px; padding-top:20px;">Tambah User</h1>
     <hr />
-    <form action="{{ route('usermanagement.store') }}" method="POST">
+    <form action="{{ route('usermanagement.store') }}" method="POST" style="padding-left: 20px; padding-right: 20px;>
         @csrf
         <div class="row mb-3">
             <div class="col">

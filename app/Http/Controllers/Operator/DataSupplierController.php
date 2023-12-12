@@ -30,12 +30,16 @@ class DataSupplierController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        supplier::create($request->all());
- 
-        return redirect()->route('datsupplier.index')->with('Berhasil', 'Berhasil menambahkan data supplier!');
-    }
+{
+    $supplier = $request->all();
+    $supplier['kode_supplier'] = 'S' . mt_rand(00, 99);
 
+    if ($supplier['kode_supplier']) {
+        supplier::create($supplier);
+
+        return redirect()->route('datasupplier.index')->with('Berhasil', 'Berhasil menambahkan data supplier!');
+    }
+}
     /**
      * Display the specified resource.
      */

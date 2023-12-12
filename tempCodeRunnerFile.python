@@ -1,0 +1,55 @@
+import threading
+import time
+
+class MRTGateSimulation:
+    def __init__(self):
+        self.arrival_times = []
+        self.service_times = []
+        self.total_wait_time = 0
+        self.total_service_time = 0
+        self.lock = threading.Lock()
+
+    def simulate_passenger(self, arrival_time, service_time):
+        with self.lock:
+            if not self.arrival_times:
+                wait_time = max(0, arrival_time)
+            else:
+                wait_time = max(0, self.service_times[-1] - arrival_time)
+
+            self.arrival_times.append(arrival_time)
+            self.service_times.append(service_time)
+            self.total_wait_time += wait_time
+            self.total_service_time += service_time
+
+    def run_simulation(self, num_passengers):
+        threads = []
+        
+        print("Masukkan waktu kedatangan dan waktu layanan untuk setiap penumpang:")
+        for i in range(num_passengers):
+            arrival_time = float(input(f"Waktu kedatangan penumpang ke-{i + 1}: "))
+            service_time = float(input(f"Waktu layanan penumpang ke-{i + 1}: "))
+
+            thread = threading.Thread(target=self.simulate_passenger, args=(arrival_time, service_time))
+            threads.append(thread)
+
+        # Menjalankan thread untuk setiap penumpang
+        for thread in threads:
+            thread.start()
+
+        # Menunggu hingga semua thread selesai
+        for thread in threads:
+            thread.join()
+
+        average_wait_time = self.total_wait_time / num_passengers
+        average_service_time = self.total_service_time / num_passengers
+
+        print("\nHasil simulasi:")
+        print(f"Total waktu tunggu: {self.total_wait_time}")
+        print(f"Rata-rata waktu tunggu: {average_wait_time}")
+        print(f"Total waktu layanan: {self.total_service_time}")
+        print(f"Rata-rata waktu layanan: {average_service_time}")
+
+if __name__ == "__main__":
+    num_passengers = int(input("Masukkan jumlah penumpang: "))
+    simulation = MRTGateSimulation()
+    simulation.run_simulation(num_passengers)

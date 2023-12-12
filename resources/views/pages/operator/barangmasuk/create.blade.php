@@ -2,6 +2,7 @@
 
 @section('content')
 
-{{-- ngodingnya di sini --}}
+{{-- ngodingnya di sini --}} 
+tes
 
 @endsection

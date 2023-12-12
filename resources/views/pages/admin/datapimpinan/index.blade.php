@@ -3,6 +3,7 @@
 @section('content')
 
 <table class="table">
+    tes
     <thead>
         <tr>
             <th>No</th>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="d-flex align-items-center justify-content-between">
+<div class="d-flex align-items-center justify-content-between" style="padding-top:20px;">
     <a href="{{ route('datasupplier.create') }}" class="btn btn-primary">Tambah</a>
 </div>
 <hr />

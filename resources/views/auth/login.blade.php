@@ -59,7 +59,7 @@
       <div class="row">
         <div class="col-md-12 text-center">
           <div class="header-text mb-4">
-            <h2>Inventaris Barang</h2>
+            <img src="images/inventaris.gif" style="width: 400px; margin-bottom:8px">
             <p>Kelola Gudang Jadi Gampang!</p>
           </div>
           <form method="POST" action="{{ route('login') }}">

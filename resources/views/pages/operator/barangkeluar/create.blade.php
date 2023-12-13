@@ -8,18 +8,27 @@
         @csrf
         <div class="row mb-3">
             <div class="col">
-                <select name="kode_product" class="form-control">
-                    @foreach($product as $pr)
-                        <option value="{{ $pr->kode_product }}">{{ $pr->kode_product }}</option>
+                <select name="name" class="form-control">
+                    @foreach($user as $us)
+                        <option value="{{ $us->id }}">{{ $us->name }}</option>
                     @endforeach
                 </select>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <select name="kategori" class="form-control">
+                <select name="nama_product" class="form-control">
+                    @foreach($product as $pr)
+                        <option value="{{ $pr->id_product }}">{{ $pr->nama_product }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <select name="nama_supplier" class="form-control">
                     @foreach($supplier as $sp)
-                        <option value="{{ $sp->kode_supplier }}">{{ $sp->kode_supplier }}</option>
+                        <option value="{{ $sp->id_supplier }}">{{ $sp->nama_supplier }}</option>
                     @endforeach
                 </select>
             </div>

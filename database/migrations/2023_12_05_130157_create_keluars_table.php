@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('keluars', function (Blueprint $table) {
             $table->increments('id_keluar');
             $table->string('kode_keluar');
-            $table->string('kode_product');
-            $table->string('kode_supplier');
-            $table->unsignedBigInteger('id');
+            $table->string('nama_product');
+            $table->string('nama_supplier');
+            $table->string('name');
             $table->integer('stok_keluar');
             $table->date('tgl_keluar');
             $table->timestamps();

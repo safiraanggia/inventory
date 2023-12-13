@@ -12,21 +12,21 @@ class keluar extends Model
 
     protected $fillable = [
         'kode_keluar',
-        'kode_supplier',
-        'kode_product',
-        'id',
+        'nama_supplier',
+        'nama_product',
+        'name',
         'stok_keluar',
         'tgl_keluar'
     ];
 
     public function product() {
-        return $this->belongsTo('App\Models\product', 'kode_product');
+        return $this->belongsTo('App\Models\product', 'nama_product');
     }
 
     public function supplier() {
-        return $this->belongsTo('App\Models\supplier', 'kode_supplier');
+        return $this->belongsTo('App\Models\supplier', 'nama_supplier');
     }
     public function User() {
-        return $this->belongsTo('App\Models\User', 'id');
+        return $this->belongsTo('App\Models\User', 'name');
     }
 }

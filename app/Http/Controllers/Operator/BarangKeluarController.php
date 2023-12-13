@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\keluar;
 use App\Models\product;
 use App\Models\supplier;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 
 class BarangKeluarController extends Controller
@@ -25,9 +26,10 @@ class BarangKeluarController extends Controller
      */
     public function create()
     {
-        $product = product::select('id_product', 'kode_product')->get();
-        $supplier = supplier::select('id_supplier', 'kode_supplier')->get();
-        return view('pages.operator.barangkeluar.create', compact('product','supplier'));   
+        $user = User::all();
+        $supplier = supplier::all();
+        $product = product::all();
+        return view('pages.operator.barangkeluar.create', compact('product','supplier','user'));   
     }
     /**
      * Store a newly created resource in storage.
@@ -37,24 +39,10 @@ class BarangKeluarController extends Controller
     $keluar = $request->all();
     $keluar['kode_keluar'] = 'K' . mt_rand(00, 99);
 
-    // Ambil nilai 'kode_supplier' dari request (form)
-    $supplier = $request->input('kode_supplier');
-
-    // Ambil informasi 'supplier' berdasarkan 'kode_supplier' dari model 'Supplier'
-    $supplier = supplier::where('kode_supplier', $supplier)->first();
-
-    // Pastikan 'supplier' ditemukan dan memiliki 'kode_supplier'
-    if ($supplier && $supplier->kode_supplier) {
-        // Masukkan nilai 'kode_supplier' dari 'supplier' ke dalam 'keluar'
-        $keluar['kode_supplier'] = $supplier->kode_supplier;
-
-        // Simpan data ke dalam tabel 'keluar'
+    if ($keluar['kode_keluar']) {
         keluar::create($keluar);
 
         return redirect()->route('barangkeluar.index')->with('Berhasil', 'Berhasil menambahkan data supplier!');
-    } else {
-        // Handle jika 'supplier' tidak ditemukan
-        return redirect()->route('barangkeluar.index')->with('Gagal', 'Kode supplier tidak valid!');
     }
 }
 
@@ -72,8 +60,11 @@ class BarangKeluarController extends Controller
     public function edit(string $id_keluar)
     {
         $keluar = keluar::findOrFail($id_keluar);
+        $user = User::all();
+        $supplier = supplier::all();
+        $product = product::all();
  
-        return view('pages.operator.barangkeluar.edit', compact('keluar'));
+        return view('pages.operator.barangkeluar.edit', compact('keluar','product','supplier','user'));
     }
 
     /**
@@ -82,6 +73,10 @@ class BarangKeluarController extends Controller
     public function update(Request $request, string $id_keluar)
     {
         $keluar = keluar::findOrFail($id_keluar);
+
+        $user = User::all();
+        $supplier = supplier::all();
+        $product = product::all();
  
         $keluar->update($request->all());
  

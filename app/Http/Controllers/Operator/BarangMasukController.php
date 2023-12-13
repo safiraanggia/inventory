@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Operator;
 
 use Illuminate\Http\Request;
 use App\Models\masuk;
+use App\Models\product;
+use App\Models\supplier;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 
 class BarangMasukController extends Controller
@@ -23,18 +26,25 @@ class BarangMasukController extends Controller
      */
     public function create()
     {
-        return view('pages.operator.barangmasuk.create');
+        $user = User::all();
+        $supplier = supplier::all();
+        $product = product::all();
+        return view('pages.operator.barangmasuk.create', compact('product','supplier','user'));
     }
-
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        masuk::create($request->all());
+    $masuk = $request->all();
+    $masuk['kode_masuk'] = 'K' . mt_rand(00, 99);
+
+    if ($masuk['kode_masuk']) {
+        masuk::create($masuk);
  
         return redirect()->route('barangmasuk.index')->with('Berhasil', 'Berhasil menambahkan data barang!');
     }
+}
 
     /**
      * Display the specified resource.
@@ -50,8 +60,11 @@ class BarangMasukController extends Controller
     public function edit(string $id_masuk)
     {
         $masuk = masuk::findOrFail($id_masuk);
+        $user = User::all();
+        $supplier = supplier::all();
+        $product = product::all();
  
-        return view('pages.operator.barangmasuk.edit', compact('masuk'));
+        return view('pages.operator.barangmasuk.edit', compact('masuk', 'user', 'supplier', 'product'));
     }
 
     /**
@@ -60,6 +73,10 @@ class BarangMasukController extends Controller
     public function update(Request $request, string $id_masuk)
     {
         $masuk = masuk::findOrFail($id_masuk);
+
+        $user = User::all();
+        $supplier = supplier::all();
+        $product = product::all();
  
         $masuk->update($request->all());
  

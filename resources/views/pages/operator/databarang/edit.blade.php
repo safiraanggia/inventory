@@ -10,13 +10,14 @@
         <div class="row mb-3">
             <div class="col">
                 <label class="form-label">Nama</label>
-                <input type="text" name="nama_product" class="form-control" placeholder="nama_product">
+                <input type="text" name="nama_product" class="form-control" placeholder="Nama product">
             </div>
         </div>
         <div class="row mb-3">
             <div class="row mb-3">
                 <div class="col">
                     <select name="kategori" class="form-control">
+                        <option value="" disabled selected>Select Variant</option>
                         <option value="Makanan">Makanan</option>
                         <option value="Minuman">Minuman</option>
                         <option value="ATK">ATK</option>

@@ -51,6 +51,10 @@ Route::middleware(['auth'])->group(function(){
     //pimpinan
     Route::resource('/laporanbarang', LaporanBarangController::class);
     Route::resource('/laporansupplier', LaporanSupplierController::class);
+    Route::get('/pdfsupplier', [LaporanSupplierController::class, 'pdfsupplier'])->name('pdfsupplier');
+    Route::get('/pdfbarang', [LaporanBarangController::class, 'pdfbarang'])->name('pdfbarang');
+
+    
 
     // admin
     Route::resource('/usermanagement', UserManagementController::class);

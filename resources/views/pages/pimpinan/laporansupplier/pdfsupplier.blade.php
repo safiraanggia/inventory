@@ -1,14 +1,22 @@
-@extends('layouts.dashboard-pimpinan')
-
-@section('content')
-
-<h2>Laporan Supplier</h2>
-<div class="d-flex align-items-center justify-content-between" style="padding-top:20px;">
-    <a href="{{ route('pdfsupplier') }}" class="btn btn-primary" target="_blank">Cetak PDF</a>
-</div>
-<hr></hr>
-<table class="table table-hover">
-    <thead class="table-primary">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <style>
+        table.static {
+            position: relative;
+            border: 1px solid #543535;
+        }
+    </style>
+    <title>CETAK LAPORAN SUPPLIER</title>
+</head>
+<body>
+    <div class="fore-group">
+        <p align="center"><b>Laporan Supplier</b></p>
+        <table class="static" align="center" rules="all" border="1px" style="width: 95%;">
         <tr>
             <th>No</th>
             <th>Kode</th>
@@ -17,9 +25,6 @@
             <th>No Telp</th>
             <th>Alamat</th>
         </tr>
-    </thead>
-    <tbody>
-        @if($supplier->count() > 0)
             @foreach($supplier as $rs)
                 <tr>
                     <td class="align-middle">{{ $loop->iteration }}</td>
@@ -30,12 +35,7 @@
                     <td class="align-middle">{{ $rs->alamat_supplier }}</td>
                 </tr>
             @endforeach
-        @else
-            <tr>
-                <td class="text-center" colspan="5">Product not found</td>
-            </tr>
-        @endif
-    </tbody>
-</table>
-
-@endsection
+    </table>
+    </div>
+</body>
+</html>

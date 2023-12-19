@@ -8,7 +8,7 @@
         @csrf
         <div class="row mb-3">
             <div class="col">
-                <input type="text" name="nama_product" class="form-control" placeholder="Nsma Product">
+                <input type="text" name="nama_product" class="form-control" placeholder="Nama Product">
             </div>
         </div>
         <div class="row mb-3">

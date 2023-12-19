@@ -10,6 +10,7 @@
         <div class="row mb-3">
             <div class="col">
                 <select name="name" class="form-control">
+                    <option value="" disabled selected>Select User</option>
                     @foreach($user as $us)
                         <option value="{{ $us->id }}">{{ $us->name }}</option>
                     @endforeach
@@ -19,8 +20,9 @@
         <div class="row mb-3">
             <div class="col">
                 <select name="kode_product" class="form-control">
+                    <option value="" disabled selected>Select Product</option>
                     @foreach($product as $pr)
-                        <option value="{{ $pr->id_product }}">{{ $pr->nama_product }}</option>
+                        <option value="{{ $pr->nama_product }}">{{ $pr->nama_product }}</option>
                     @endforeach
                 </select>
             </div>
@@ -28,6 +30,7 @@
         <div class="row mb-3">
             <div class="col">
                 <select name="kode_supplier" class="form-control">
+                    <option value="" disabled selected>Select Supplier</option>
                     @foreach($supplier as $sp)
                         <option value="{{ $sp->id_supplier }}">{{ $sp->nama_supplier }}</option>
                     @endforeach

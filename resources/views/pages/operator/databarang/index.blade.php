@@ -31,7 +31,7 @@
                     <td class="align-middle">{{ $rs->kategori }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('databarang.edit', $rs->id_product)}}" type="button" class="btn btn-warning">Edit</a>
+                            <a style="margin-right:10px" href="{{ route('databarang.edit', $rs->id_product)}}" type="button" class="btn btn-warning">Edit</a>
                             <form action="{{ route('databarang.destroy', $rs->id_product) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')

@@ -21,7 +21,7 @@
                 <select name="nama_product" class="form-control">
                      <option value="" disabled selected>Select Product</option>
                     @foreach($product as $pr)
-                        <option value="{{ $pr->id_product }}">{{ $pr->nama_product }}</option>
+                        <option value="{{ $pr->nama_product }}">{{ $pr->nama_product }}</option>
                     @endforeach
                 </select>
             </div>

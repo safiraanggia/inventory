@@ -17,8 +17,8 @@
             <th>No</th>
             <th>Nama User</th>
             <th>Kode Keluar</th>
-            <th>Kode Produk</th>
-            <th>Kode Supplier</th>
+            <th>Nama Produk</th>
+            <th>Nama Supplier</th>
             <th>Stok Keluar</th>
             <th>Tanggal Keluar</th>
             <th>Action</th>
@@ -31,13 +31,13 @@
                     <td class="align-middle">{{ $loop->iteration }}</td>
                     <td class="align-middle">{{ $rs->User->name  }}</td>
                     <td class="align-middle">{{ $rs->kode_keluar }}</td>
-                    <td class="align-middle">{{ $rs->product->nama_product }}</td>
+                    <td class="align-middle">{{ $rs->nama_product }}</td>
                     <td class="align-middle">{{ $rs->supplier->nama_supplier }}</td>
                     <td class="align-middle">{{ $rs->stok_keluar }}</td>
                     <td class="align-middle">{{ $rs->tgl_keluar }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('barangkeluar.edit', $rs->id_keluar)}}" type="button" class="btn btn-warning">Edit</a>
+                            <a style="margin-right: 10px" href="{{ route('barangkeluar.edit', $rs->id_keluar)}}" type="button" class="btn btn-warning">Edit</a>
                             <form action="{{ route('barangkeluar.destroy', $rs->id_keluar) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')

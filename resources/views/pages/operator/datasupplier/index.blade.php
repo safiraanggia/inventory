@@ -35,7 +35,7 @@
                     <td class="align-middle">{{ $rs->alamat_supplier }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('datasupplier.edit', $rs->id_supplier)}}" type="button" class="btn btn-warning">Edit</a>
+                            <a style="margin-right:10px" href="{{ route('datasupplier.edit', $rs->id_supplier)}}" type="button" class="btn btn-warning">Edit</a>
                             <form action="{{ route('datasupplier.destroy', $rs->id_supplier) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')

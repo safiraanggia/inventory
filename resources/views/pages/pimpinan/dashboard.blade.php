@@ -98,41 +98,32 @@
     });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Data proporsi penjualan produk dari PHP
-        const productSales = <?php echo json_encode($productSales); ?>;
-
-        // Mendapatkan referensi canvas
-        const ctx = document.getElementById('pieChart').getContext('2d');
-
-        // Membuat pie chart menggunakan Chart.js
-        const myChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: Object.keys(productSales), // Label produk
-                datasets: [{
-                    label: 'Product Sales',
-                    data: Object.values(productSales), // Data penjualan produk
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.5)', // Warna latar belakang pie chart untuk Product A
-                        'rgba(54, 162, 235, 0.5)', // Warna latar belakang pie chart untuk Product B
-                        'rgba(255, 206, 86, 0.5)', // Warna latar belakang pie chart untuk Product C
-                        // ... tambahkan warna latar belakang lainnya sesuai jumlah produk
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)', // Warna garis border pie chart untuk Product A
-                        'rgba(54, 162, 235, 1)', // Warna garis border pie chart untuk Product B
-                        'rgba(255, 206, 86, 1)', // Warna garis border pie chart untuk Product C
-                        // ... tambahkan warna border lainnya sesuai jumlah produk
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                // Tambahkan opsi lain jika diperlukan
-            }
-        });
+    var ctx = document.getElementById('pieChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Barang Masuk', 'Barang Keluar'],
+            datasets: [{
+                label: 'Jumlah Barang',
+                data: [{{ $barangMasuk }}, {{ $barangKeluar }}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            // Tambahkan opsi lainnya sesuai kebutuhan Anda
+        }
     });
 </script>
 

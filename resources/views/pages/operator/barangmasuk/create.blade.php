@@ -21,7 +21,7 @@
                 <select name="nama_product" class="form-control">
                      <option value="" disabled selected>Select Product</option>
                     @foreach($product as $pr)
-                        <option value="{{ $pr->id_product }}">{{ $pr->nama_product }}</option>
+                        <option value="{{ $pr->nama_product }}">{{ $pr->nama_product }}</option>
                     @endforeach
                 </select>
             </div>
@@ -38,13 +38,13 @@
         </div>
         <div class="row mb-3">
             <div class="col">
-                <input type="text" name="stok_masuk" class="form-control" placeholder="Stok Masuk">
+                <input type="text" name="stok_masuk" class="form-control" placeholder="Stok masuk" style=>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
                 <input type="date" name="tgl_masuk" class="form-control" placeholder="tgl_masuk">
-            </div>
+           </div>
         </div>
         <div class="row">
             <div class="d-grid">

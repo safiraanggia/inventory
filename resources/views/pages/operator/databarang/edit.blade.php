@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="mb-0">Tambah Barang</h1>
+<h2 class="mb-0" style="margin-top:20px;">Edit Barang</h2>
     <hr />
     <form action="{{ route('databarang.update', $product->id_product) }}" method="POST">
         @csrf

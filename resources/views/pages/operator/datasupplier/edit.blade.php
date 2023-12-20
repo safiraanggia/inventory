@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="mb-0">Tambah Supplier</h1>
+<h2 style="margin-top:20px;" class="mb-0">Edit Supplier</h2>
     <hr />
     <form action="{{ route('datasupplier.update', $supplier->id_supplier) }}" method="POST">
         @csrf

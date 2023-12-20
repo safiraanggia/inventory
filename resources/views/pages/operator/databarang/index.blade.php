@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="d-flex align-items-center justify-content-between">
-    <a href="{{ route('databarang.create') }}" class="btn btn-primary">Tambah</a>
+    <a href="{{ route('databarang.create') }}" class="btn btn-primary" style="margin-top:15px;">Tambah</a>
 </div>
 <hr />
 @if(Session::has('success'))
@@ -11,6 +11,7 @@
         {{ Session::get('success') }}
     </div>
 @endif
+<h2 style="margin-bottom:15px;">Data Barang</h2>
 <table class="table table-hover">
     <thead class="table-primary">
         <tr>

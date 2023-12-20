@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="d-flex align-items-center justify-content-between" style="padding-top:20px;">
+<div class="d-flex align-items-center justify-content-between" style="margin-top:15px;">
     <a href="{{ route('datasupplier.create') }}" class="btn btn-primary">Tambah</a>
 </div>
 <hr />
@@ -11,6 +11,7 @@
         {{ Session::get('success') }}
     </div>
 @endif
+<h2 style="margin-bottom:15px;">Data Supplier</h2>
 <table class="table table-hover">
     <thead class="table-primary">
         <tr>

@@ -1,11 +1,11 @@
 @extends('layouts.dashboard-pimpinan')
 
 @section('content')
-    <h2>Laporan Barang</h2>
     <div class="d-flex align-items-center justify-content-between" style="padding-top:20px;">
     <a href="{{ route('pdfbarang') }}" class="btn btn-primary" target="_blank">Cetak PDF</a>
     </div>
     <hr>
+    <h2 style="margin-bottom:10px;">Laporan Barang</h2>
     <table class="table table-hover" id="table-1">
         <thead class="table-primary">
             <tr>

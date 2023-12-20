@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="mb-0">Tambah Barang Keluar</h1>
+<h2 style="margin-top:15px;" class="mb-0">Tambah Barang Keluar</h2>
     <hr />
     <form action="{{ route('barangkeluar.store') }}" method="POST">
         @csrf

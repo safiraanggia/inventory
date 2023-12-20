@@ -2,11 +2,11 @@
 
 @section('content')
 
-<h2>Laporan Supplier</h2>
 <div class="d-flex align-items-center justify-content-between" style="padding-top:20px;">
     <a href="{{ route('pdfsupplier') }}" class="btn btn-primary" target="_blank">Cetak PDF</a>
 </div>
-<hr></hr>
+<hr>
+<h2 style="margin-bottom:10px;">Laporan Supplier</h2>
 <table class="table table-hover">
     <thead class="table-primary">
         <tr>

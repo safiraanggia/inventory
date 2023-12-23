@@ -79,4 +79,24 @@ class LaporanSupplierController extends Controller
  
         return view('pages.pimpinan.laporansupplier.index')->with('Berhasil', 'Berhasil menghapus data supplier!');
     }
+
+    public function cari(Request $request)
+{
+    $keyword = $request->input('cari'); // Ambil nilai keyword dari request pencarian
+
+    $query = supplier::orderBy('created_at', 'DESC');
+
+    // Jika terdapat keyword, tambahkan kondisi pencarian ke dalam query
+    if ($keyword) {
+        $query->where(function ($q) use ($keyword) {
+            $q->where('nama_supplier', 'LIKE', '%' . $keyword . '%');
+            // Tambahkan kolom lain yang ingin dijadikan sebagai kriteria pencarian
+        });
+    }
+
+    $supplier = $query->get();
+
+    return view('pages.pimpinan.laporansupplier.index', compact('supplier'));
+}
+
 }

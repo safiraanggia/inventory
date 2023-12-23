@@ -50,7 +50,9 @@ Route::middleware(['auth'])->group(function(){
 
     //pimpinan
     Route::resource('/laporanbarang', LaporanBarangController::class);
+    Route::get('/laporanbarang-cari', [LaporanBarangController::class, 'cari'])->name('laporanbarang-cari');
     Route::resource('/laporansupplier', LaporanSupplierController::class);
+    Route::get('/laporansupplier-cari', [LaporanSupplierController::class, 'cari'])->name('laporansupplier-cari');
     Route::get('/pdfsupplier', [LaporanSupplierController::class, 'pdfsupplier'])->name('pdfsupplier');
     Route::get('/pdfbarang', [LaporanBarangController::class, 'pdfbarang'])->name('pdfbarang');
 

@@ -7,6 +7,14 @@
 </div>
 <hr>
 <h2 style="margin-bottom:10px;">Laporan Supplier</h2>
+<form action="{{ route('laporansupplier-cari') }}" method="GET">
+    <div class="input-group mb-3">
+        <input type="text" name="cari" class="form-control" placeholder="Cari Nama Supplier">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" style="margin-left: 10px;">Cari</button>
+        </div>
+    </div>
+</form>
 <table class="table table-hover">
     <thead class="table-primary">
         <tr>

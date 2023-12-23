@@ -6,6 +6,14 @@
     </div>
     <hr>
     <h2 style="margin-bottom:10px;">Laporan Barang</h2>
+    <form action="{{ route('laporanbarang-cari') }}" method="GET">
+        <div class="input-group mb-3">
+            <input type="text" name="cari" class="form-control" placeholder="Cari Nama Produk">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" style="margin-left: 10px;">Cari</button>
+            </div>
+        </div>
+    </form>
     <table class="table table-hover" id="table-1">
         <thead class="table-primary">
             <tr>

@@ -2,7 +2,7 @@
     <!--Content Sidebar-->
     <div class="h-100">
       <div style="height:90px; padding-top:25px; padding-left:8px;" class="sidebar-logo">
-        <a style="font-size:30px;" href="#">GudangMu</a>
+      <center><img src="/images/gudangku.gif" width="200px"></center>
       </div>
       <ul class="sidebar-nav">
         <li class="sidebar-item">

@@ -83,8 +83,17 @@
             datasets: [{
                 label: 'Jumlah Item per Kategori',
                 data: itemCounts,
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: [
+                                '#FF8080',
+                                '#F9B572',
+                                '#F6FDC3',
+                                '#C8E4B2',
+                                '#FFD966',
+                                '#94AF9F',
+                                '#C8FFD4',
+                                '#B8E8FC',
+                                '#B1AFFF',
+                                ],
                 borderWidth: 1
             }]
         },
@@ -98,6 +107,8 @@
     });
 </script>
 
+<canvas id="pieChart" width="400" height="400"></canvas>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     var ctx = document.getElementById('pieChart').getContext('2d');
@@ -109,12 +120,10 @@
                 label: 'Jumlah Barang',
                 data: [{{ $barangMasuk }}, {{ $barangKeluar }}],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
+                    '#186F65',
+                    '#B1AFFF',
+                    '#FF9130',
+                    '#706233',
                 ],
                 borderWidth: 1
             }]

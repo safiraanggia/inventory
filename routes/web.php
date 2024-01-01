@@ -37,9 +37,7 @@ Route::redirect('/', '/login', 301);
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard/admin', [HomeController::class, 'admin'])->name('dashboard-admin');
-    Route::post('/dashboard/admin', [HomeController::class, 'admin'])->name('dashboard-admin');
     Route::get('/dashboard/operator', [HomeController::class, 'operator'])->name('dashboard-operator');
-    Route::post('/dashboard/operator', [HomeController::class, 'operator'])->name('dashboard-operator');
     Route::get('/dashboard/pimpinan', [HomeController::class, 'pimpinan'])->name('dashboard-pimpinan');
 
     //operator

@@ -39,7 +39,9 @@
             Barang Keluar
         </a>
         </li>
-  
+        <li>
+          <img src="/images/QR.jpg" style="padding-left: 60px;  margin-top: 20px; width: 200px;" >
+        </li>   
       </ul>
     </div>
   </aside>

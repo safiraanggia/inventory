@@ -30,7 +30,10 @@
             <img width="23" height="23" src="/images/operator.png" alt="truck" style="margin-right:2px; margin-left:1px;"/>
             Data Operator
         </a>
-        </li>  
+        </li> 
+        <li>
+          <img src="/images/QR.jpg" style="padding-left: 60px;  margin-top: 20px; width: 200px;" >
+        </li> 
       </ul>
     </div>
   </aside>
